@@ -21,7 +21,7 @@ const courseNames = [
 
 export const Exams = () => {
     return (
-        <section className="p-4 w-full">
+        <section className="relative top-20 p-4 w-full mx-auto">
             <div className="flex justify-between items-center flex-col md:flex-row">
                 <h1 className="text-2xl font-bold mb-5">Exam Library</h1>
                 <label
