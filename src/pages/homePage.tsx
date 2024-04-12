@@ -1,5 +1,5 @@
 export const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div className="relative top-20">HomePage</div>
   );
 };
