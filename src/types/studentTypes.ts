@@ -1,0 +1,15 @@
+export interface Student {
+    firstName: string,
+    lastName: string,
+    email: string,
+    phoneNumber: string,
+    userImage: string,
+    organizationName: string,
+    organizationId: string,
+    rollNo: string,
+    joinedOn: string,
+    address: string,
+    linkedinUrl: string,
+    githubUrl: string,
+    portfolioUrl: string,
+}

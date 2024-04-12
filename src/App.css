@@ -4,7 +4,7 @@
 
 @layer components {
   .btn {
-    @apply font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center focus:outline-none;
+    @apply font-medium rounded-lg text-sm flex-1 px-5 py-2.5 text-center focus:outline-none;
 
     &.primary {
       @apply text-white bg-[#446860] hover:bg-green-800;
@@ -23,8 +23,55 @@
   }
   .svg-icon {
     @apply flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75;
+
+    &.primary {
+      @apply w-8 h-8 mx-auto;
+    }
+
+    &.secondary {
+      @apply w-8 h-8 mx-auto;
+    }
   }
   .border-separation {
     @apply border-2 border-solid border-gray-100;
+  }
+  .label-style {
+    @apply block mb-2 text-sm font-medium text-gray-900;
+  }
+  .input-text-area-with-icon {
+    @apply absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none;
+  }
+  .input-field-upload-file {
+    @apply absolute inset-0 w-full h-full opacity-0 cursor-pointer;
+  }
+  .secondary-heading {
+    @apply mb-2 text-2xl font-bold tracking-tight text-gray-900;
+  }
+  .inline-flex-center {
+    @apply inline-flex items-center;
+  }
+  .main-title-text {
+    @apply mb-6 text-4xl text-primary font-extrabold tracking-tight leading-none md:text-5xl;
+  }
+  .sub-title-text {
+    @apply mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48;
+  }
+  .card-with-icon-and-description {
+    @apply flex-shrink w-64 p-6 bg-white border border-gray-200 rounded-lg shadow text-center;
+  }
+  .card-title-text {
+    @apply text-2xl font-semibold tracking-tight text-primary my-2;
+  }
+  .course-details-card {
+    @apply max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow;
+  }
+  .course-details-card-title {
+    @apply mb-2 text-2xl font-bold tracking-tight text-primary;
+  }
+  .course-details-card-description {
+    @apply mb-3 font-normal text-gray-700 dark:text-gray-400;
+  }
+  .admin-card-with-icon-and-description {
+    @apply flex-shrink w-64 p-6 bg-white border border-gray-200 rounded-lg shadow text-center w-auto h-20 p-12 flex justify-center items-center gap-4;
   }
 }

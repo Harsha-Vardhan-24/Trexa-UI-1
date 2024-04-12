@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-import { Header } from "../components/header";
 import { SideBar } from "../components/sidebar";
 
 export const Layout = () => {
@@ -7,8 +6,8 @@ export const Layout = () => {
     <main>
       <section className="flex">
         <SideBar />
-        <Outlet />      
+        <Outlet />
       </section>
     </main>
-  )
-}
+  );
+};
