@@ -74,4 +74,7 @@
   .admin-card-with-icon-and-description {
     @apply flex-shrink w-64 p-6 bg-white border border-gray-200 rounded-lg shadow text-center w-auto h-20 p-12 flex justify-center items-center gap-4;
   }
+  .admin-questions-differentiation-tabs {
+    @apply flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 w-[80vw];
+  }
 }
