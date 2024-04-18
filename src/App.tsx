@@ -1,16 +1,27 @@
-import { Route, Routes } from "react-router-dom";
-import "./App.css";
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
 // Student Pages
-import { HomePage } from "./pages/homePage";
-import { StudentProfile } from "./pages/studentProfile";
-import { Exams } from "./pages/exams";
-import { ExamDetails } from "./pages/examDetails";
-import { ExamOnBoarding } from "./pages/examOnBoarding";
-import { StudentVerification } from "./pages/studentVerification";
-import { Layout } from "./pages/layout";
+import { HomePage } from './pages/common/HomePage.js';
+import { StudentProfile } from './pages/student/studentProfile.js';
+import { Exams } from './pages/student/exams.js';
+import { ExamDetails } from './pages/student/examDetails.js';
+import { ExamOnBoarding } from './pages/student/examOnBoarding.js';
+import { StudentVerification } from './pages/student/studentVerification.js';
+import { Layout } from './pages/layouts/layout.js';
 // Admin Pages
-import { TestLibrary } from "./pages/admin/testLibrary";
-import { AddQuestion } from "./pages/admin/add-question";
+
+
+import { TemplateLibrary } from './pages/organization/TemplateLibrary.js';
+import { TemplateCreation } from './pages/organization/TemplateCreation.js';
+import { TestsLibrary } from './pages/organization/TestsLibrary.js';
+import { TestLibrary } from './pages/temp/temp.js';
+import { Mylibrary } from './components/common/Mylibrary.js';
+import { AddObjectiveQuestion } from './components/Organization/AddObjectiveQuestion.js';
+import { TempAddObjectiveQuestion } from './components/temp/temp.js';
+
+
+
+
 
 function App() {
   return (
@@ -22,8 +33,15 @@ function App() {
         <Route path="/exam-details" element={<ExamDetails />} />
         <Route path="/exam-onboarding" element={<ExamOnBoarding />} />
         <Route path="/student-verification" element={<StudentVerification />} />
+        {/* Admin Routes */}
         <Route path="/admin-test-library" element={<TestLibrary />} />
-        <Route path="/admin-add-question" element={<AddQuestion />} />
+        <Route path="/admin-template-library" element={<TemplateLibrary />} />
+        <Route path="/admin-template-creation" element={<TemplateCreation />} />
+        <Route path="/admin-tests-library" element={<TestsLibrary />} />
+        <Route path="/mylibrary" element={<Mylibrary/>} />
+        <Route path="/admin-add-question" element={<AddObjectiveQuestion/>} />
+        <Route path="/admin-test-library" element={<TestLibrary/>}/>
+        <Route path={'/test-quill'} element={<TempAddObjectiveQuestion/>}/>
       </Route>
     </Routes>
   );
