@@ -1,4 +1,16 @@
+// import { Editor, EditorState } from 'draft-js';
+// import 'draft-js/dist/Draft.css';
+// import { useState } from 'react';
+
 export const AddQuestion = () => {
+  // const [editorState, setEditorState] = useState(() =>
+  //   EditorState.createEmpty()
+  // );
+
+  // const onChange = (newEditorState: any) => {
+  //   setEditorState(newEditorState);
+  // };
+
   return (
     <section className="relative top-20 w-[90%] mx-auto">
       <div className="flex justify-between">
@@ -20,11 +32,16 @@ export const AddQuestion = () => {
             placeholder="Question Here"
             required
           ></textarea>
+          {/* <Editor
+            editorState={editorState}
+            onChange={onChange}
+            placeholder="Question Here"
+          /> */}
         </div>
       </div>
       <h1 className="main-title-text text-2xl mb-1 mt-6">Options</h1>
 
-      <div className="flex flex-col md:flex-row gap-4 items-center">
+      <div className="flex flex-col md:flex-row gap-4 items-center md:items-baseline">
         <div className="w-1/2">
           <div className="flex flex-col gap-4">
             <div className="">
@@ -78,7 +95,7 @@ export const AddQuestion = () => {
           </div>
         </div>
 
-        <div className="w-1/2 flex">
+        <div className="w-1/2">
           <div className="flex flex-col gap-4 py-4">
             <div className="flex gap-1">
               <div className="w-1/3">

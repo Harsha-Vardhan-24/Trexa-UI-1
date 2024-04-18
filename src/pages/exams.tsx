@@ -19,6 +19,14 @@ const courseNames = [
     { title: "Internet of Things (IoT) Security", questions: 26, time: 75 }
 ];
 
+// {
+//     title: 'Cyber Security',
+//     type: 'Objective',
+//     questions: 20,
+//     time: 60,
+//     lastUpdated: '2024-04-14',
+//   },
+
 export const Exams = () => {
     return (
         <section className="relative top-20 p-4 w-full mx-auto">
