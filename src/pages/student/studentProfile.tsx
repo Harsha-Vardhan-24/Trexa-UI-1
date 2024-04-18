@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {Student} from "../types/studentTypes"
+import {Student} from "../../types/studentTypes"
 
 export const StudentProfile = () => {
 

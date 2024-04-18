@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import QuillInputEditor from './QuillInputEditor';
+import QuillInputEditor from '../resuablecomponents/QuillInputEditor';
 
 export const TestQuill = () => {
   const { register, handleSubmit, control, watch } = useForm(); // Add 'watch' to get form values

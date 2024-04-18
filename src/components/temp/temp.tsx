@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import QuillInputEditor from './QuillInputEditor';
+import QuillInputEditor from '../resuablecomponents/QuillInputEditor';
 
 export const TempAddObjectiveQuestion = () => {
   const { register, handleSubmit, control } = useForm();

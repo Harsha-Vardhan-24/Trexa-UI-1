@@ -1,4 +1,4 @@
-import Logo from "../assets/TrExa.png";
+import Logo from "/assets/TrExa.png";
 import { useState } from "react";
 
 export const SideBar = () => {

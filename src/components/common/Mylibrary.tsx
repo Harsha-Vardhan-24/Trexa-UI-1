@@ -4,9 +4,9 @@ import DataTable,{TableColumn} from 'react-data-table-component';
 import { QuestionExpand } from './QuestionExpand';
 import { useNavigate } from 'react-router-dom';
 import { QuestionsResponseData } from '../../types/QuestionsResponseData';
-import { DeleteQuestionPopUp } from '../../components/DeleteQuestionPopUp';
+import { DeleteQuestionPopUp } from '../resuablecomponents/DeleteQuestionPopUp';
 import { htmlToPlainText } from '../../utilities/htmlToText';
-import ReusableInputDropdown from '../../components/ReusableInputDropDown';
+import ReusableInputDropdown from '../resuablecomponents/ReusableInputDropDown';
 
 export const Mylibrary=()=>{
   const postData={

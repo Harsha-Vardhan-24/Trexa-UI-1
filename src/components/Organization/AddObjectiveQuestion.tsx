@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import QuillInputEditor from './QuillInputEditor';
-import ReusableInputDropDown from './ReusableInputDropDown';
-import AutocompleteInput from './ReusableInputDropDown';
-import CategoriesInput from './CategoriesInput';
+import QuillInputEditor from '../resuablecomponents/QuillInputEditor';
+import ReusableInputDropDown from '../resuablecomponents/ReusableInputDropDown';
+import AutocompleteInput from '../resuablecomponents/ReusableInputDropDown';
+import CategoriesInput from '../resuablecomponents/CategoriesInput';
 
 export const AddObjectiveQuestion = () => {
   const { register, handleSubmit, control } = useForm();
