@@ -9,8 +9,14 @@ import { ExamOnBoarding } from "./pages/examOnBoarding";
 import { StudentVerification } from "./pages/studentVerification";
 import { Layout } from "./pages/layout";
 // Admin Pages
-import { TestLibrary } from "./pages/admin/testLibrary";
-import { AddQuestion } from "./pages/admin/add-question";
+
+
+import { Mylibrary } from "./pages/admin/Mylibrary";
+import { TestLibrary } from "./pages/admin/temp";
+import { AddObjectiveQuestion } from "./components/AddObjectiveQuestion";
+import { TestQuill } from "./components/TestQuill";
+import { TempAddObjectiveQuestion } from "./components/temp";
+
 
 function App() {
   return (
@@ -22,8 +28,10 @@ function App() {
         <Route path="/exam-details" element={<ExamDetails />} />
         <Route path="/exam-onboarding" element={<ExamOnBoarding />} />
         <Route path="/student-verification" element={<StudentVerification />} />
-        <Route path="/admin-test-library" element={<TestLibrary />} />
-        <Route path="/admin-add-question" element={<AddQuestion />} />
+        <Route path="/mylibrary" element={<Mylibrary/>} />
+        <Route path="/admin-add-question" element={<AddObjectiveQuestion/>} />
+        <Route path="/admin-test-library" element={<TestLibrary/>}/>
+        <Route path={'/test-quill'} element={<TempAddObjectiveQuestion/>}/>
       </Route>
     </Routes>
   );
