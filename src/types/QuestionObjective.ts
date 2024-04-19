@@ -1,7 +1,7 @@
 interface QuestionObjective{
     questionId: number,
     questionText: string,
-    addedOn: Date,
+    addedOn: string,
     deficultyLevel: string,
     tags: string[],
     answerType: string,
@@ -9,5 +9,6 @@ interface QuestionObjective{
     weightage: number,
     options:string [],
     correctOption: number,
-    draft: boolean
+    isdraft: boolean,
+    questionType:string
   }

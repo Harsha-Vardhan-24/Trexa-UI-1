@@ -28,7 +28,7 @@ export const Mylibrary=()=>{
     }
 }
   const navigate = useNavigate();
-  const [selectDificulty, setSelectDificulty] = useState('All');
+  const [selectDificulty, setSelectDificulty] = useState('ALL');
   
   const [loading, setLoading] = useState(false);
   const [questionsData,setQustionsData]=useState<QuestionsResponseData>();
@@ -49,10 +49,10 @@ export const Mylibrary=()=>{
     {
       name: 'Category',
       cell: (row: QuestionObjective|QuestionProgramming) => (
-       <div className="p-1 rounded-md 
+       <div className="p-2 rounded-md 
        text-center bg-blue-100
-        text-blue p-2 font-medium mr-1
-         text-center"> {row.questionCategory}</div>),
+        text-blue  font-medium mr-1
+         "> {row.questionCategory}</div>),
       sortable: true,
     },
     {

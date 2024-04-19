@@ -10,7 +10,7 @@ const CategoriesInput: React.FC<AutocompleteProps> = ({ suggestions, onSelect })
     const [filteredSuggestions, setFilteredSuggestions] = useState<string[]>([]);
     const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
     const inputRef = useRef<HTMLInputElement>(null);
-    const [selectedValues, setSelectedValues] = useState<string[]>([]);
+   
    
     useEffect(() => {
         // Function to close suggestions dropdown when clicking outside the input
