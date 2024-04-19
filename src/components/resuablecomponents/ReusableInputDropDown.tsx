@@ -108,12 +108,12 @@ const AutocompleteInput: React.FC<AutocompleteProps> = ({ suggestions, onSelect 
 
                 <input
                     type="text"
-                    className="block w-full p-4 ps-10 text-sm input-text-area"
+                    className="block w-full  text-sm input-text-area"
                     value={inputValue}
                     onChange={handleChange}
                     onFocus={handleFocus}
                     onKeyDown={handleBackspace} // Handle backspace key press
-                    placeholder="Type something..."
+                    placeholder="Search here..."
                 />
 
             </div>
