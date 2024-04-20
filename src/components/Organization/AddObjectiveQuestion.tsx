@@ -20,6 +20,7 @@ export const AddObjectiveQuestion = () => {
     data.answerType="mcq"
     data.questionType="OBJECTIVE"
     data.isdraft=false
+    
     let dataRequest:QuestionAdd={
       userId: '764d9761-b8c7-4b2a-bc62-390529bdc6b0',
       organizationId: 'c4e75b9b-1c84-415d-8d0d-2ef8133e3cc5',
