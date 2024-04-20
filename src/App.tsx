@@ -16,7 +16,7 @@ import { TemplateCreation } from './pages/organization/TemplateCreation.js';
 import { TestsLibrary } from './pages/organization/TestsLibrary.js';
 import { TestLibrary } from './pages/temp/temp.js';
 import { Mylibrary } from './components/common/Mylibrary.js';
-import { AddObjectiveQuestion } from './components/organization/AddObjectiveQuestion.js';
+import { AddObjectiveQuestion } from './components/organizations/AddObjectiveQuestion.js';
 import { TempAddObjectiveQuestion } from './components/temp/temp.js';
 
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TestCard } from '../../components/organization/TestTemplateCard';
+import { TestCard } from '../../components/organizations/TestTemplateCard';
 
 export const TemplateLibrary = () => {
   const [templateType, setTemplateType] = useState('templates');
