@@ -1,11 +1,11 @@
-import { Outlet } from 'react-router-dom';
-import { SideBar } from '../../components/common/SideBar';
+import { Outlet } from "react-router-dom";
+import { SideBar } from "../components/sidebar";
 
 export const Layout = () => {
   return (
     <main>
       <section className="flex">
-        <SideBar isAdmin={true} />
+        <SideBar />
         <Outlet />
       </section>
     </main>

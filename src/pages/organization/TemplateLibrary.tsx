@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { TestCard } from '../../components/organization/TestTemplateCard';
+import {useNavigate} from "react-router-dom";
+import { TestCard } from '../../components/Organization/TestTemplateCard';
 
 export const TemplateLibrary = () => {
+  const navigate = useNavigate();
   const [templateType, setTemplateType] = useState('templates');
 
   const templateNames = [
@@ -76,7 +78,7 @@ export const TemplateLibrary = () => {
       <div className="flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center my-2">
         <h1 className="main-title-text text-4xl mb-0">Templates</h1>
         <div>
-          <button className="btn primary flex gap-2 items-center">
+          <button onClick={() => {navigate("/admin-template-creation")}} className="btn primary flex gap-2 items-center">
             <svg
               className="svg-icon text-white"
               aria-hidden="true"

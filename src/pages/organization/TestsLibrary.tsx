@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
-import { TestsCard } from '../../components/organization/TestCard';
+import {useNavigate} from "react-router-dom";
+import { TestsCard } from '../../components/Organization/TestCard';
 
 export const TestsLibrary = () => {
+  const navigate = useNavigate();
   const [testType, setTestType] = useState('templates');
   const [templateData, setTemplateData] = useState<any>(undefined);
 
@@ -94,7 +96,8 @@ export const TestsLibrary = () => {
       <div className="flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center my-2">
         <h1 className="main-title-text text-4xl mb-0">Tests</h1>
         <div>
-          <button className="btn primary flex gap-2 items-center">
+        <button onClick={() => navigate("/admin-test-creation")} className="btn primary flex gap-2 items-center">
+
             <svg
               className="svg-icon text-white"
               aria-hidden="true"

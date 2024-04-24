@@ -1,18 +1,33 @@
 import { useState } from 'react';
-import {useNavigate} from "react-router-dom";
 
-export const TestCard = (props) => {
+export const TestsCard = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text);
+  };
+
   return (
-    <div onClick={toggleDropdown} className="admin-template-card">
-      <div className="flex items-center">
-        <h5 className="secondary-heading mr-auto text-primary">{props.name}</h5>
+    <div className="admin-template-card relative">
+      <div className="flex items-center justify-between">
+        <div>
+          {props.status ? (
+            <p className="px-2 py-1 block text-sm secondary-heading font-medium text-[12px] text-green-800 w-[60px] text-center rounded-3xl bg-green-100">
+              Active
+            </p>
+          ) : (
+            <p className="px-2 py-1 block text-sm secondary-heading font-medium text-[12px] text-red-800 w-[70px] text-center rounded-3xl bg-red-100">
+              Archived
+            </p>
+          )}
+          <h5 className="secondary-heading mr-auto text-primary">
+            {props.name}
+          </h5>
+        </div>
         <div className="flex justify-end">
           <button
             id="dropdownButton"
@@ -36,17 +51,17 @@ export const TestCard = (props) => {
             id="dropdown"
             className={`z-10 ${
               isOpen ? 'absolute' : 'hidden'
-            } text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow w-44`}
+            } text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow w-44 mt-10`}
           >
             <ul className="py-2" aria-labelledby="dropdownButton">
               <li>
                 <a href="#" className="block px-4 py-2 text-sm text-gray-700">
-                  Archive
+                  Disable Test
                 </a>
               </li>
               <li>
                 <a href="#" className="block px-4 py-2 text-sm text-gray-700">
-                  Delete
+                  Archive
                 </a>
               </li>
             </ul>
@@ -91,29 +106,35 @@ export const TestCard = (props) => {
           {props.time} Minutes
         </div>
       </div>
-      <div className="inline-flex-center font-medium pt-2 pb-4">
-        <svg
-          className="mr-2 svg-icon"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="none"
-          viewBox="0 0 24 24"
+      <div className="p-2 bg-gray-100 rounded-xl my-2 flex justify-between items-center">
+        <h1
+          onClick={(e) => copyToClipboard(e.target.textContent)}
+          className="secondary-heading text-sm mb-0"
         >
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 10h16M8 14h8m-4-7V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
-          />
-        </svg>
-        {props.updated}
+          {props.link}
+        </h1>
+        <div>
+          <svg
+            className="w-6 h-6 svg-icon cursor-pointer"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M14 4v3a1 1 0 0 1-1 1h-3m4 10v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h2m11-3v10a1 1 0 0 1-1 1h-7a1 1 0 0 1-1-1V7.87a1 1 0 0 1 .24-.65l2.46-2.87a1 1 0 0 1 .76-.35H18a1 1 0 0 1 1 1Z"
+            />
+          </svg>
+        </div>
       </div>
       <div className="flex ml-0 mr-auto md:mr-auto md:mx-0 gap-2 flex-col md:flex-row">
-        <button onClick={() => navigate("/admin-template-details")} className="inline-flex-center btn w-[150px] secondary">
-          <span className="inline-block">Details</span>
+        <button className="inline-flex-center btn w-[150px] secondary">
+          <span className="inline-block">Manage</span>
           <svg
             className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
             aria-hidden="true"
@@ -130,7 +151,7 @@ export const TestCard = (props) => {
             />
           </svg>
         </button>
-        <button onClick={() => {navigate("/admin-template-report")}} className="inline-flex-center btn w-[150px] secondary">
+        <button className="inline-flex-center btn w-[150px] secondary">
           <span className="inline-block">View Report</span>
           <svg
             className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
