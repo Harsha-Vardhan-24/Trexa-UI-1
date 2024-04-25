@@ -35,7 +35,7 @@ export const AdminCalendar = () => {
   };
 
   return (
-    <div>
+    <div className='relative'>
       <FullCalendar
         editable={true}
         selectable={true}

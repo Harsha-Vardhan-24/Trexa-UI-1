@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import {useNavigate} from "react-router-dom";
 
 export const TestCard = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -112,7 +110,7 @@ export const TestCard = (props) => {
         {props.updated}
       </div>
       <div className="flex ml-0 mr-auto md:mr-auto md:mx-0 gap-2 flex-col md:flex-row">
-        <button onClick={() => navigate("/admin-template-details")} className="inline-flex-center btn w-[150px] secondary">
+        <button className="inline-flex-center btn w-[150px] secondary">
           <span className="inline-block">Details</span>
           <svg
             className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
@@ -130,7 +128,7 @@ export const TestCard = (props) => {
             />
           </svg>
         </button>
-        <button onClick={() => {navigate("/admin-template-report")}} className="inline-flex-center btn w-[150px] secondary">
+        <button className="inline-flex-center btn w-[150px] secondary">
           <span className="inline-block">View Report</span>
           <svg
             className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
