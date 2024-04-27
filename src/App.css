@@ -11,7 +11,7 @@
     }
 
     &.secondary {
-      @apply text-black bg-white hover:bg-green-800 hover:text-white;
+      @apply text-black bg-white hover:bg-green-800 hover:text-white ;
     }
 
     &.tertiary {
@@ -22,7 +22,7 @@
     @apply bg-white border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5;
   }
   .svg-icon {
-    @apply flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75;
+    @apply flex-shrink-0 w-6 h-6 text-black transition duration-75;
 
     &.primary {
       @apply w-8 h-8 mx-auto;
@@ -33,7 +33,7 @@
     }
   }
   .border-separation {
-    @apply border-2 border-solid border-gray-100;
+    @apply border-[2px] border-solid border-gray-100;
   }
   .label-style {
     @apply block mb-2 text-sm font-medium text-gray-900;
@@ -88,5 +88,14 @@
   }
   .admin-template-support-btn {
     @apply bg-gray-500 hover:bg-gray-700 text-white py-2 px-4 rounded-r-lg disabled:opacity-50;
+  }
+  .svg-text-heading {
+    @apply text-xl font-semibold;
+  }
+  .svg-text-sub-heading {
+    @apply text-sm;
+  }
+  .dashboard-list-css {
+    @apply flex items-center p-2 text-gray-900 rounded-lg hover:bg-green-100;
   }
 }

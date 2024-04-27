@@ -1,5 +1,45 @@
 html,
 body {
-  font-family: "Inter";
-  color: "#344054";
+  font-family: 'Inter';
+  color: 'black';
+  background-color: white;
+}
+
+/* Calendar CSS */
+.current-day {
+  color: #446860;
+  padding: 4px;
+  background-color: rgba(220, 252, 231, 0.8);
+  border-radius: 100%;
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+  background-color: transparent;
+}
+
+.fc-button-group {
+  gap: 10px;
+}
+
+.fc .fc-button-primary {
+  background-color: #446860;
+  border: none;
+}
+
+.fc-h-event {
+  background-color: rgba(220, 252, 231, 0.8);
+  border: none;
+  border-radius: 5px;
+}
+
+.fc-h-event .fc-event-main {
+  color: #446860;
+}
+
+.fc .fc-daygrid-day-top {
+  flex-direction: row;
+}
+
+.fc th {
+  text-align: left;
 }

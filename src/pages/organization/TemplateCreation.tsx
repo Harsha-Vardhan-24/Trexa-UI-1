@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
 
 export const TemplateCreation = () => {
-  const [progress, setProgress] = useState<number>(2);
+  const [progress, setProgress] = useState<number>(0);
   const [option, setOption] = useState<string>('custom');
   const [templatePlan, setTemplatePlan] = useState<string | undefined>(
     'programming'
@@ -1478,7 +1478,7 @@ export const TemplateCreation = () => {
                 </div>
               </div>
             ) : (
-              <div>
+              <div className="flex gap-2">
                 <div>
                   <button
                     onSubmit={(e) => updateProgress(e, 'Remove')}
