@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import {useNavigate} from "react-router-dom";
-import { TestsCard } from '../../components/Organization/TestCard';
+import { useNavigate } from 'react-router-dom';
+import { TestsCard } from '../../components/organization/TestCard';
+import { PlusIcon, SearchIcon } from '../../components/icons/Icons';
 
 export const TestsLibrary = () => {
   const navigate = useNavigate();
@@ -91,30 +92,16 @@ export const TestsLibrary = () => {
   }, [testType]);
 
   return (
-    <section className="relative top-20 w-[90%] mx-auto">
+    <section>
       {/* Title Section */}
       <div className="flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center my-2">
         <h1 className="main-title-text text-4xl mb-0">Tests</h1>
         <div>
-        <button onClick={() => navigate("/admin-test-creation")} className="btn primary flex gap-2 items-center">
-
-            <svg
-              className="svg-icon text-white"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 7.757v8.486M7.757 12h8.486M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
+          <button
+            onClick={() => navigate('/admin-test-creation')}
+            className="btn primary flex gap-2 items-center"
+          >
+            <PlusIcon />
             Create Test
           </button>
         </div>
@@ -122,21 +109,7 @@ export const TestsLibrary = () => {
       {/* Search box in here */}
       <div className="relative top-2 mx-auto md:mx-0 w-[80%] md:w-[30%]">
         <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-          <svg
-            className="w-4 h-4 text-gray-500"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 20 20"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-            />
-          </svg>
+          <SearchIcon />
         </div>
         <input
           type="search"

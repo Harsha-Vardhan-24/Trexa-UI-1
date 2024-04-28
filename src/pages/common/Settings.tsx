@@ -144,7 +144,7 @@ export const Settings = () => {
   };
 
   return (
-    <section className="relative top-20 p-4 w-full mx-auto">
+    <section>
       <h1 className="main-title-text text-4xl mb-0">Settings</h1>
       {/* Categorization here */}
       <div className="flex flex-col mt-6">

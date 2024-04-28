@@ -448,7 +448,7 @@ export const TemplateCreation = () => {
   };
 
   return (
-    <section className="relative top-20 w-[90%] mx-auto">
+    <section>
       <h1 className="main-title-text text-4xl">Create Template</h1>
       {/* Progress Indicator */}
       <div className="w-[90vw] mx-auto md:w-[40vw]">

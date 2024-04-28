@@ -1,5 +1,5 @@
-import { AdminCalendar } from '../../components/Organization/Calendar';
-import { RecentTests } from '../../components/Organization/RecentTests';
+import { AdminCalendar } from '../../components/organization/Calendar';
+import { RecentTests } from '../../components/organization/RecentTests';
 
 export const AdminHomePage = () => {
   const recentTestsData = [
@@ -30,7 +30,7 @@ export const AdminHomePage = () => {
   ];
 
   return (
-    <section className="relative top-20 p-4 w-full mx-auto">
+    <section>
       {/* Modal with data */}
       <div className="border-solid border-1.5 shadow rounded-lg px-6 py-10 mx-auto">
         <div className="flex flex-col md:flex-row gap-14">

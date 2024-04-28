@@ -89,7 +89,7 @@ export const TestsLibrary = () => {
   }, [testType]);
 
   return (
-    <section className="relative top-20 w-[90%] mx-auto">
+    <section>
       {/* Title Section */}
       <div className="flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center my-2">
         <h1 className="main-title-text text-4xl mb-0">Tests</h1>

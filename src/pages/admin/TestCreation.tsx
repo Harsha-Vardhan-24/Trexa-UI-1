@@ -3,9 +3,8 @@ import { useState } from 'react';
 export const TestCreation = () => {
   const [selectDificulty, setSelectDificulty] = useState('public');
 
-
   return (
-    <div className="relative top-20 p-4 w-full mx-auto flex flex-col gap-2">
+    <section>
       <nav className="flex" aria-label="Breadcrumb">
         <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
           <li className="inline-flex items-center">
@@ -298,6 +297,6 @@ export const TestCreation = () => {
       <div className="ml-auto">
         <button className="btn primary">Save & Sumbit</button>
       </div>
-    </div>
+    </section>
   );
 };
