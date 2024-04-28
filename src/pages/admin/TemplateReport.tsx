@@ -285,7 +285,7 @@ export const TemplateReport = () => {
   };
 
   return (
-    <div className="relative top-20 p-4 w-full mx-auto">
+    <section>
       {/* Title and navigation breadcrums */}
       <h1 className="secondary-heading">Report</h1>
       <nav className="flex mb-8" aria-label="Breadcrumb">
@@ -565,6 +565,6 @@ export const TemplateReport = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
