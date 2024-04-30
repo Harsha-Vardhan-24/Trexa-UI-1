@@ -3,7 +3,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import { useState } from 'react';
 
 export const AdminCalendar = () => {
-  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [selectedEvent, setSelectedEvent] = useState<any>(null);
 
   const events = [
     { id: '1', title: 'Assosiacte Engineer', date: '2024-04-01' },
@@ -13,15 +13,11 @@ export const AdminCalendar = () => {
     { id: '5', title: 'Dev Ops Engineer', date: '2024-05-02' },
   ];
 
-  const handleEventClick = (clickInfo) => {
+  const handleEventClick = (clickInfo: any) => {
     setSelectedEvent(clickInfo.event);
   };
 
-  const handleClosePopup = () => {
-    setSelectedEvent(null);
-  };
-
-  const dayCellContent = (args) => {
+  const dayCellContent = (args: any) => {
     let date = new Date();
     if (
       args.date.getFullYear() === date.getFullYear() &&

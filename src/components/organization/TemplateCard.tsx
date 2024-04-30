@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowIcon, ClockIcon, CopyToClipboardIcon, QuestionIcon } from '../icons/Icons';
+import { ArrowIcon, CalendarIcon, ClockIcon, MoreIcon, QuestionIcon } from '../icons/Icons';
 
-export const TestsCard = (props: any) => {
+
+export const TemplateCard = (props: any) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigate = useNavigate()
@@ -11,14 +12,10 @@ export const TestsCard = (props: any) => {
     setIsOpen(!isOpen);
   };
 
-  const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text);
-  };
-
   return (
-    <div className="admin-template-card relative">
+    <div className="admin-template-card">
       <div className="flex items-center justify-between">
-        <div>
+        <div className=''>
           {props.status ? (
             <p className="px-2 py-1 block text-sm secondary-heading font-medium text-[12px] text-green-800 w-[60px] text-center rounded-3xl bg-green-100">
               Active
@@ -41,15 +38,7 @@ export const TestsCard = (props: any) => {
             aria-expanded={isOpen}
           >
             <span className="sr-only">Open dropdown</span>
-            <svg
-              className="svg-icon"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 16 3"
-            >
-              <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
-            </svg>
+            <MoreIcon />
           </button>
           <div
             id="dropdown"
@@ -86,20 +75,15 @@ export const TestsCard = (props: any) => {
           </span>
         </div>
       </div>
-      <div className="p-2 bg-gray-100 rounded-xl my-2 flex justify-between items-center">
-        <h1
-          onClick={(e) => copyToClipboard(e.target.textContent)}
-          className="secondary-heading text-sm mb-0"
-        >
-          {props.link}
-        </h1>
-        <div>
-          <CopyToClipboardIcon />
-        </div>
+      <div className="inline-flex-center font-medium pt-2 pb-4">
+        <CalendarIcon />
+        <span className='ml-2'>
+          {props.updated}
+        </span>
       </div>
       <div className="flex ml-0 mr-auto md:mr-auto md:mx-0 gap-2 flex-col md:flex-row">
-        <button className="inline-flex-center btn w-[150px] secondary">
-          <span className="inline-block">Manage</span>
+        <button className="inline-flex-center btn w-[150px] secondary" onClick={() => navigate("/admin-template-details")}>
+          <span className="inline-block">Details</span>
           <ArrowIcon />
         </button>
         <button className="inline-flex-center btn w-[150px] secondary" onClick={() => navigate("/admin-template-report")}>

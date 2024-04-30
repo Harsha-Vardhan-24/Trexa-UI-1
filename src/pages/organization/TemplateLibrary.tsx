@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { TestCard } from '../../components/organization/TestTemplateCard';
+import { TemplateCard } from '../../components/organization/TemplateCard';
 import { PlusIcon, SearchIcon } from '../../components/icons/Icons';
+import { TemplateLibraryCard } from '../../types/TemplateLibraryCard';
 
 export const TemplateLibrary = () => {
   const navigate = useNavigate();
   const [templateType, setTemplateType] = useState('templates');
+  const [templateData, setTemplateData] = useState<any>(undefined);
 
   const templateNames = [
     {
@@ -14,7 +16,7 @@ export const TemplateLibrary = () => {
       questions: 20,
       time: 60,
       lastUpdated: '2024-04-14',
-      status: false
+      status: true
     },
     {
       title: 'Cyber Security Fundamentals',
@@ -22,7 +24,7 @@ export const TemplateLibrary = () => {
       questions: 15,
       time: 45,
       lastUpdated: '2024-04-14',
-      status: false
+      status: true
     },
     {
       title: 'Advanced Cyber Security Practices',
@@ -30,7 +32,7 @@ export const TemplateLibrary = () => {
       questions: 25,
       time: 75,
       lastUpdated: '2024-04-14',
-      status: false
+      status: true
     },
     {
       title: 'Ethical Hacking and Penetration Testing',
@@ -38,7 +40,7 @@ export const TemplateLibrary = () => {
       questions: 30,
       time: 90,
       lastUpdated: '2024-04-14',
-      status: false
+      status: true
     },
     {
       title: 'Network Security Essentials',
@@ -46,7 +48,7 @@ export const TemplateLibrary = () => {
       questions: 18,
       time: 55,
       lastUpdated: '2024-04-14',
-      status: false
+      status: true
     },
     {
       title: 'Cyber Security Risk Management',
@@ -82,7 +84,13 @@ export const TemplateLibrary = () => {
     },
   ];
   
-  
+  useEffect(() => {
+    if (templateType === 'archived') {
+      setTemplateData(templateNames.filter((template) => !template.status));
+    } else {
+      setTemplateData(templateNames.filter((template) => template.status));
+    }
+  }, [templateType]);
 
   return (
     <section>
@@ -150,13 +158,14 @@ export const TemplateLibrary = () => {
       </div>
       {/* Cards */}
       <div className="flex flex-wrap gap-4 pb-10 justify-center md:justify-start ">
-        {templateNames.map((template, index) => {
+        {templateData && templateData.map((template: TemplateLibraryCard, index: number) => {
           return (
-            <TestCard
+            <TemplateCard
               name={template.title}
               questions={template.type}
               time={template.time}
               updated={template.lastUpdated}
+              status={template.status}
               key={index}
             />
           );

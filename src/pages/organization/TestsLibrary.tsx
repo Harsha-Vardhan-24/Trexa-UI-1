@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TestsCard } from '../../components/organization/TestCard';
 import { PlusIcon, SearchIcon } from '../../components/icons/Icons';
+import { TestLibraryCard } from '../../types/TestLibraryCard';
 
 export const TestsLibrary = () => {
   const navigate = useNavigate();
@@ -156,7 +157,7 @@ export const TestsLibrary = () => {
       {/* Cards */}
       <div className="flex flex-wrap gap-4 pb-10 justify-center md:justify-start ">
         {templateData &&
-          templateData.map((template, index) => {
+          templateData.map((template: TestLibraryCard, index: number) => {
             return (
               <TestsCard
                 name={template.title}
