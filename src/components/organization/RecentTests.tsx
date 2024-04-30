@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 export const RecentTests = (props) => {
+  const navigate = useNavigate()
+
   return (
     <div className="w-full flex flex-col gap-4 p-4 bg-gray-50 rounded-xl">
       <div className="flex justify-between">
@@ -24,7 +28,7 @@ export const RecentTests = (props) => {
         </div>
       </div>
       <div className="ml-auto">
-        <button className="btn secondary">View Report</button>
+        <button className="btn secondary" onClick={() => navigate("/admin-template-report")}>View Report</button>
       </div>
     </div>
   );

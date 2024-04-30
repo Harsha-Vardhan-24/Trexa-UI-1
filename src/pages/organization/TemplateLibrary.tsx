@@ -14,6 +14,7 @@ export const TemplateLibrary = () => {
       questions: 20,
       time: 60,
       lastUpdated: '2024-04-14',
+      status: false
     },
     {
       title: 'Cyber Security Fundamentals',
@@ -21,6 +22,7 @@ export const TemplateLibrary = () => {
       questions: 15,
       time: 45,
       lastUpdated: '2024-04-14',
+      status: false
     },
     {
       title: 'Advanced Cyber Security Practices',
@@ -28,6 +30,7 @@ export const TemplateLibrary = () => {
       questions: 25,
       time: 75,
       lastUpdated: '2024-04-14',
+      status: false
     },
     {
       title: 'Ethical Hacking and Penetration Testing',
@@ -35,6 +38,7 @@ export const TemplateLibrary = () => {
       questions: 30,
       time: 90,
       lastUpdated: '2024-04-14',
+      status: false
     },
     {
       title: 'Network Security Essentials',
@@ -42,6 +46,7 @@ export const TemplateLibrary = () => {
       questions: 18,
       time: 55,
       lastUpdated: '2024-04-14',
+      status: false
     },
     {
       title: 'Cyber Security Risk Management',
@@ -49,6 +54,7 @@ export const TemplateLibrary = () => {
       questions: 22,
       time: 70,
       lastUpdated: '2024-04-14',
+      status: false
     },
     {
       title: 'Cloud Security Principles',
@@ -56,6 +62,7 @@ export const TemplateLibrary = () => {
       questions: 17,
       time: 50,
       lastUpdated: '2024-04-14',
+      status: false
     },
     {
       title: 'Cryptography and Data Protection',
@@ -63,6 +70,7 @@ export const TemplateLibrary = () => {
       questions: 23,
       time: 65,
       lastUpdated: '2024-04-14',
+      status: false
     },
     {
       title: 'Cyber Security Incident Response',
@@ -70,8 +78,11 @@ export const TemplateLibrary = () => {
       questions: 28,
       time: 80,
       lastUpdated: '2024-04-14',
+      status: false
     },
   ];
+  
+  
 
   return (
     <section>

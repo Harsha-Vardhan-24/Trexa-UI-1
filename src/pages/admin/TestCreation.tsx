@@ -146,7 +146,7 @@ export const TestCreation = () => {
       </div>
       {/* Test Configuration Inputs Here */}
       <div>
-        <h3 className="secondary-heading text-xl">Test Configuration</h3>
+        <h3 className="secondary-heading text-xl">Proctoring Configuration</h3>
         <div className="border-separation p-4 rounded-xl flex gap-4">
           <div className="grid grid-cols-1 md:grid-cols-2 w-[100%] gap-4">
             <div>
