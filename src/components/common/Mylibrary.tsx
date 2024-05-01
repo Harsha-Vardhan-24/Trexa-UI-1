@@ -7,6 +7,7 @@ import { QuestionsResponseData } from '../../types/QuestionsResponseData';
 import { DeleteQuestionPopUp } from '../resuablecomponents/DeleteQuestionPopUp';
 import { htmlToPlainText } from '../../utilities/htmlToText';
 import ReusableInputDropdown from '../resuablecomponents/ReusableInputDropDown';
+import { CategorySortIcon, QuestionIcon } from '../icons/Icons';
 
 export const Mylibrary = () => {
   const postData = {
@@ -23,11 +24,11 @@ export const Mylibrary = () => {
     difficulty: 'ALL',
     search: [''],
     authtoken: {
-      id: '8166eae1-c855-4063-af3e-68322450b4c2',
+      id: import.meta.env.VITE_API_QUESTION_AUTHTOKEN,
     },
   };
   const navigate = useNavigate();
-  const [selectDificulty, setSelectDificulty] = useState('All');
+  const [selectDificulty, setSelectDificulty] = useState('ALL');
 
   const [loading, setLoading] = useState(false);
   const [questionsData, setQustionsData] = useState<QuestionsResponseData>();
@@ -156,14 +157,16 @@ export const Mylibrary = () => {
     fetchQuestions();
     // Handle the selected item in your component logic
   };
+
   const fetchQuestions = async () => {
+    console.log(import.meta.env.VITE_API_ROUTE)
     setLoading(true);
     try {
-      console.log(filterData);
       const response = await axios.post<QuestionsResponseData>(
-        `http://localhost:8080/mylibrary`,
+        `${import.meta.env.VITE_API_ROUTE}/mylibrary`,
         filterData
       );
+      console.log(response)
       setQustionsData(response.data);
       if (activeTab === 'Objective') {
         SetTableData(response.data.objective.questions);
@@ -187,6 +190,7 @@ export const Mylibrary = () => {
       setLoading(false);
     }
   };
+
   const handlePageChange = (page: number) => {
     console.log(page);
     var modifiedFilter = filterData;
@@ -201,6 +205,7 @@ export const Mylibrary = () => {
     console.log(filterData);
     fetchQuestions();
   };
+
   const handlePerRowsChange = async (newPerPage: number, page: number) => {
     var modifiedFilter = filterData;
 
@@ -213,6 +218,7 @@ export const Mylibrary = () => {
     setFilterData(modifiedFilter);
     fetchQuestions();
   };
+
   useEffect(() => {
     fetchQuestions();
   }, [activeTab]);
@@ -250,6 +256,7 @@ export const Mylibrary = () => {
       },
     },
   };
+
   const handleTabClick = (tab: React.SetStateAction<string>) => {
     setActiveTab(tab);
     console.log(tab);
@@ -298,6 +305,7 @@ export const Mylibrary = () => {
       );
     }
   };
+
   return (
     <section>
       <DeleteQuestionPopUp
@@ -306,45 +314,14 @@ export const Mylibrary = () => {
       />
       <div className="flex flex-wrap justify-center gap-4">
         <div className="admin-card-with-icon-and-description">
-          <svg
-            className="svg-icon primary"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M12 6.03v13m0-13c-2.819-.831-4.715-1.076-8.029-1.023A.99.99 0 0 0 3 6v11c0 .563.466 1.014 1.03 1.007 3.122-.043 5.018.212 7.97 1.023m0-13c2.819-.831 4.715-1.076 8.029-1.023A.99.99 0 0 1 21 6v11c0 .563-.466 1.014-1.03 1.007-3.122-.043-5.018.212-7.97 1.023"
-            />
-          </svg>
+          <QuestionIcon />
           <div>
             <h5 className="card-title-text m-0">{totalRows}</h5>
             <p className="sub-title-text mb-0 p-0 font-normal">Questions</p>
           </div>
         </div>
         <div className="admin-card-with-icon-and-description">
-          <svg
-            className="svg-icon primary"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeWidth="2"
-              d="M6 4v10m0 0a2 2 0 1 0 0 4m0-4a2 2 0 1 1 0 4m0 0v2m6-16v2m0 0a2 2 0 1 0 0 4m0-4a2 2 0 1 1 0 4m0 0v10m6-16v10m0 0a2 2 0 1 0 0 4m0-4a2 2 0 1 1 0 4m0 0v2"
-            />
-          </svg>
+          <CategorySortIcon />
 
           <div>
             <h5 className="card-title-text m-0">{categoriesCount}</h5>
@@ -352,40 +329,58 @@ export const Mylibrary = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center gap-10 mt-10 justify-between mb-10">
-        <div className="flex gap-1">
-          <button
-            className={
-              selectDificulty === 'ALL' ? 'btn primary' : 'btn secondary'
-            }
-            onClick={() => handleDifficultyLevel('ALL')}
-          >
-            All
-          </button>
-          <button
-            className={
-              selectDificulty === 'EASY' ? 'btn primary' : 'btn secondary'
-            }
-            onClick={() => handleDifficultyLevel('EASY')}
-          >
-            Easy
-          </button>
-          <button
-            className={
-              selectDificulty === 'MEDIUM' ? 'btn primary' : 'btn secondary'
-            }
-            onClick={() => handleDifficultyLevel('MEDIUM')}
-          >
-            Medium
-          </button>
-          <button
-            className={
-              selectDificulty === 'HARD' ? 'btn primary' : 'btn secondary'
-            }
-            onClick={() => handleDifficultyLevel('HARD')}
-          >
-            Hard
-          </button>
+      {/* Sorting buttons in here */}
+      <div className="flex flex-col items-center md:items-end mt-10 mb-10">
+        <div className="flex flex-col">
+          <label htmlFor="testDuration" className="label-style">
+            Select Difficulty
+          </label>
+          <div className="inline-flex rounded-md shadow-sm" role="group">
+            <button
+              onClick={() => handleDifficultyLevel('ALL')}
+              type="button"
+              className={`px-4 py-2 text-sm font-medium ${
+                selectDificulty === 'ALL'
+                  ? 'text-white bg-primary'
+                  : 'text-secondary bg-white'
+              } border rounded-s-lg`}
+            >
+              All
+            </button>
+            <button
+              onClick={() => handleDifficultyLevel('EASY')}
+              type="button"
+              className={`px-4 py-2 text-sm font-medium ${
+                selectDificulty === 'EASY'
+                  ? 'text-white bg-primary'
+                  : 'text-black bg-white'
+              } border-t border-b border-r border-gray-200`}
+            >
+              Easy
+            </button>
+            <button
+              onClick={() => handleDifficultyLevel('MEDIUM')}
+              type="button"
+              className={`px-4 py-2 text-sm font-medium ${
+                selectDificulty === 'MEDIUM'
+                  ? 'text-white bg-primary'
+                  : 'text-black bg-white'
+              } border-t border-b border-r border-gray-200`}
+            >
+              Medium
+            </button>
+            <button
+              onClick={() => handleDifficultyLevel('HARD')}
+              type="button"
+              className={`px-4 py-2 text-sm font-medium ${
+                selectDificulty === 'HARD'
+                  ? 'text-white bg-primary'
+                  : 'text-black bg-white'
+              } border border-gray-200 rounded-e-lg`}
+            >
+              Hard
+            </button>
+          </div>
         </div>
       </div>
       <div>

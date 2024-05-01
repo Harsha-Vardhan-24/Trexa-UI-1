@@ -30,12 +30,17 @@ function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
+
+        {/* Student Routes */}
         <Route path="/" element={<HomePage />} />
         <Route path="/student-profile" element={<StudentProfile />} />
         <Route path="/exams" element={<Exams />} />
         <Route path="/exam-details" element={<ExamDetails />} />
         <Route path="/exam-onboarding" element={<ExamOnBoarding />} />
         <Route path="/student-verification" element={<StudentVerification />} />
+
+
+
         {/* Admin Routes */}
         <Route path="/admin" element={<AdminHomePage />} />
         <Route path="/admin-pages" element={<Pages />} />
