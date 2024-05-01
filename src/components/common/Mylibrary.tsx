@@ -159,7 +159,6 @@ export const Mylibrary = () => {
   };
 
   const fetchQuestions = async () => {
-    console.log(import.meta.env.VITE_API_ROUTE)
     setLoading(true);
     try {
       const response = await axios.post<QuestionsResponseData>(

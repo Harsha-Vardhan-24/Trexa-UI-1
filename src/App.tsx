@@ -25,6 +25,7 @@ import { AdminHomePage } from './pages/admin/Homepage';
 import { Pages } from './pages/admin/Pages.js';
 import { Settings } from './pages/common/Settings.js';
 import { AdminLogin } from './pages/admin/AdminLogin.js';
+import { ExamPage } from './pages/student/ExamPage.js';
 
 function App() {
   return (
@@ -38,8 +39,6 @@ function App() {
         <Route path="/exam-details" element={<ExamDetails />} />
         <Route path="/exam-onboarding" element={<ExamOnBoarding />} />
         <Route path="/student-verification" element={<StudentVerification />} />
-
-
 
         {/* Admin Routes */}
         <Route path="/admin" element={<AdminHomePage />} />
@@ -62,6 +61,7 @@ function App() {
         <Route path="/admin-test-library" element={<TestLibrary />} />
       </Route>
       <Route path="/admin-login" element={<AdminLogin />} />
+      <Route path="/exam-page" element={<ExamPage />} />
     </Routes>
   );
 }
